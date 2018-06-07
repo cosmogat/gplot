@@ -1,5 +1,11 @@
 # gplot
 Graphing library for C based in gnuplot
+## Dependences
+You need gnuplot to use this library, in Debian GNU/Linux you can do this:
+```
+apt install gnuplot
+```
+This library tested in gnuplot 5.0 patchlevel rc2.
 ## Example
 ```
 ...
