@@ -15,8 +15,8 @@ gplot_key(&graf, "Sinus", 1, 0, 1, 5);
 xxx[0] = 0;
 gplot_logscale(&graf, "x", 10); 
 gplot_unlogscale(&graf, "x");
-dif_x = 3.0 / 1000; 
-for (i = 1; i < 10000; i++)
+dif_x = 3.0 / 1000.0; 
+for (i = 1; i < 1000; i++)
   xxx[i] = xxx[i - 1] + dif_x;
 for (i = 2; i < 10; i++) { */
   for (j = 0; j < 1000; j++)
