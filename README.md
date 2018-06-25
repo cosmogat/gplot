@@ -14,6 +14,47 @@ git clone https://github.com/cosmogat/gplot.git
 You can use this library installing in your operative system or use like a normal c library. If you want some examples for use this library you can see *prova_gplot.c* file.
 
 ### Using with installation
+There is an installation script, that installs this library in */usr/local* tree. You can install this library with:
+```
+sudo ./install.sh
+```
+After, you can use the library like the next example. Imagine that you have a C file called "file.c" that contents:
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <gplot.h>
+#define N 100
+int main () {
+  Gplot graph;
+  int i = 0;
+  float x[N], y1[N], y2[N], y3[N], y4[N], y5[N];
+  for (i = 0; i < N; i++) {
+    x[i] = (((float) i) * 0.01);
+    y1[i] = x[i];
+    y2[i] = y1[i] * x[i];
+    y3[i] = y2[i] * x[i];
+    y4[i] = y3[i] * x[i];
+    y5[i] = y4[i] * x[i];
+  }
+  gplot_init(&graph, "ex1.png");
+  gplot_title(&graph, "Graph title");
+  gplot_key(&graph, "", 1, 0, 0, 7);
+  gplot_xlabel(&graph, "x");
+  gplot_ylabel(&graph, "y");
+  gplot_plot(&graph, x, y1, N, "  x", "");
+  gplot_plot(&graph, x, y2, N, "x^2", "");
+  gplot_plot(&graph, x, y3, N, "x^3", "");
+  gplot_plot(&graph, x, y4, N, "x^4", "");
+  gplot_plot(&graph, x, y5, N, "x^5", "");
+  gplot_exit(&graph);
+  return 0;
+}
+```
+And you can compile this with:
+```
+gcc -lgplot file.c -o output
+```
+Then you execute the ouput file and you obtain this png file:
 
 ### Using without installation
 You can use this library like a normal library in C, including the header file and compile *.c file. For example, if you have a c file called test.c with the next include:
@@ -32,35 +73,6 @@ gcc prova_gplot.c gplot.c -lm -o test
 rm gplot.{c,h}
 ./test
 ```
-
-
-## Example
-```
-...
-#include "gplot.h"
-...
-Gplot graf;
-...
-gplot_init(&graf, ""); 
-gplot_fillTransparent(&graf, 0.5); 
-gplot_xrange(&graf, 0.1, 3); 
-gplot_yrange(&graf, -0.6, 0.6); 
-gplot_key(&graf, "Sinus", 1, 0, 1, 5); 
-xxx[0] = 0;
-gplot_logscale(&graf, "x", 10); 
-gplot_unlogscale(&graf, "x");
-dif_x = 3.0 / 1000.0; 
-for (i = 1; i < 1000; i++)
-  xxx[i] = xxx[i - 1] + dif_x;
-for (i = 2; i < 10; i++) { */
-  for (j = 0; j < 1000; j++)
-    sinus[j] = sin(xxx[j] * i) / i;
-  sprintf(cad, "sin(%d·x)/%d", i, i);
-  gplot_plotFilled(&graf, xxx, sinus, quants, 0.0, cad, "");
-   } 
-gplot_exit(&graf);
-```
-You can see more examples in [prova_gplot.c](./prova_gplot.c)
 ## Autors
 * **Cosmo Cat**  [cosmogat](https://github.com/cosmogat)
 ## License
