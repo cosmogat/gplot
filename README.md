@@ -50,11 +50,11 @@ int main () {
   return 0;
 }
 ```
-And you can compile this with:
+You can compile this with:
 ```
 gcc -lgplot file.c -o output
 ```
-Then you execute the ouput file and you obtain this png file:
+And then you execute the ouput file and you obtain this png file:
 ![example1](./img/ex1.png)
 
 ### Using without installation
