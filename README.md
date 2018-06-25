@@ -55,6 +55,7 @@ And you can compile this with:
 gcc -lgplot file.c -o output
 ```
 Then you execute the ouput file and you obtain this png file:
+![example1](./img/ex1.png)
 
 ### Using without installation
 You can use this library like a normal library in C, including the header file and compile *.c file. For example, if you have a c file called test.c with the next include:
