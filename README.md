@@ -7,8 +7,14 @@ apt install gnuplot
 ```
 This library tested in gnuplot 5.0 patchlevel rc2.
 ## Using
+For download the code you can write this on your shell:
+```
+git clone https://github.com/cosmogat/gplot.git
+```
+You can use this library installing in your operative system or use like a normal c library. If you want some examples for use this library you can see *prova_gplot.c* file.
 
 ### Using with installation
+
 ### Using without installation
 You can use this library like a normal library in C, including the header file and compile *.c file. For example, if you have a c file called test.c with the next include:
 ```
@@ -18,7 +24,7 @@ You can compile with:
 ```
 gcc test.c gplot.c -o test
 ```
-If gplot.c, gplot.h and test.c  are in the same directory. If you want to test with the test file called *prova_gplot.c* you can do this in the command line:
+If gplot.c, gplot.h and test.c are in the same directory. If you want to test with the test file called *prova_gplot.c* you can do this in the command line:
 ```
 cp src/gplot.{c,h} test/
 cd test
